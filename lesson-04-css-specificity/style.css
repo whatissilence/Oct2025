@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-bottom: 100px;
+}
+
+div.example.secondary {
+  background-color: red;
+}
+
+.example {
+  border: 1px solid black;
+  width: 600px;
+  margin: 10px;
+  padding: 20px;
+  background-color: lightblue;
+}
+
+.example:hover {
+  font-weight: bold;
+}
+
+.secondary {
+  background-color: lightgrey;
+}
+
+#top > span, h1 {
+  background-color: yellow;
+}
+
+
+/*
+div p {
+  background-color: lightgrey;
+}
+
+section p {
+  background-color: lightgreen;
+}
+*/
+
+.parent-div .child-p {
+  background-color: lightgrey;
+}
+
+.parent-section .child-p {
+  background-color: lightgreen;
+}
+
+header > p {
+  color: green;
+}
+
+h1 ~ p {
+  color: blue;
+}
+
+p {
+  margin: 10px;
+}
+
+a {
+  color: red;
+}
+
+a[href$=".pdf"] {
+  color: green;
+}
+
+/*
+.secondary {
+  padding: 10px 20px 30px 40px
+}
+*/
+
+
+.menu-item {
+  margin-left: 10px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  border-bottom: 2px solid green;
+  background-color: lightblue;
+}
+
+.menu-item:last-of-type {
+  border-bottom: none;
+}
+
+.menu-item:nth-of-type(2n) {
+  background-color: lightyellow;
+}
+
+/*
+p::first-letter {
+  font-size: 200%;
+  color: red;
+}
+*/
+
+ul li {
+  list-style-type: none;
+}
+
+ul li::before {
+  content: "--> ";
+  color: red;
+  font-size: 150%;
+}
+
+ul li::after {
+  content: " <--";
+  color: blue;
+  font-size: 150%;
+}
+
+.super-ul {
+  color: maroon;
+}
+
+.point5 {
+  color: blueviolet;
+}
