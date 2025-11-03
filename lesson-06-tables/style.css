@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'Caveat Brush';
+  src:
+    url("fonts/CaveatBrush-Regular.ttf") format("truetype");
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.demo-table td, .demo-table th {
+  border: 1px solid black;
+  background-color: lightgreen;
+  padding: 5px;
+}
+
+.demo-table th {
+  background-color: lightblue;
+}
+
+.special-cell2 {
+  width: 100px;
+}
+
+.special-wide-cell {
+  width: 150px;
+}
+
+.container {
+  /*max-width: 1280px; !* Максимальна ширина контейнера *!*/
+  /*margin-left: auto; !* Автоматичний відступ зліва для центрування *!*/
+  /*margin-right: auto; !* Автоматичний відступ справа для центрування *!*/
+  /*padding-left: 20px; !* Відступ зліва всередині контейнера *!*/
+  /*padding-right: 20px; !* Відступ справа всередині контейнера *!*/
+
+  width: min(100% - 40px, 1280px);
+  margin-inline: auto;
+
+  background-color: #61dafb;
+}
+
+.super-beautiful {
+  font-family: "Rouge Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+}
+
+.something-else {
+  font-family: "Caveat Brush", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.my-koperta {
+  font-size: 50px;
+  font-weight: normal;
+  color: darkblue;
+}
+
