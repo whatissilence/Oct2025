@@ -1,0 +1,69 @@
+.inl {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: lightseagreen;
+  position: relative;
+  z-index: 2;
+}
+
+.pos-container {
+  background-color: yellowgreen;
+  border: 1px solid black;
+  padding: 30px;
+  position: relative;
+}
+
+.special {
+  background-color: lightcoral;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  width: auto;
+  height: auto;
+  /*opacity: 0.5;*/
+  z-index: 1;
+}
+
+
+.fx {
+  background-color: lightblue;
+  position: fixed;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  bottom: 50px;
+  right: 50px;
+  padding: 50px 20px;
+
+  border-radius: 50%
+}
+
+.part {
+  width: 80px;
+  height: 80px;
+  position: sticky;
+  top: 10px;
+}
+
+.part-1 {
+  background-color: orange;
+}
+
+.part-2 {
+  background-color: lightgreen;
+}
+
+.part-3 {
+  background-color: lightcoral;
+}
+
+section {
+  margin-top: 20px;
+}
+
+section p {
+  margin-left: 90px;
+}

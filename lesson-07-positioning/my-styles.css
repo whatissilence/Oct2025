@@ -1,0 +1,18 @@
+div {
+  background-color: lightpink;
+  margin: 20px;
+}
+
+.insider {
+  background-color: lightblue;
+}
+
+.text-inside {
+  background-color: lightgreen;
+  padding: 20px;
+}
+
+.my-duck {
+  width: 20px;
+  height: 20px;
+}

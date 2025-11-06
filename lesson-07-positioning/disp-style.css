@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.example {
+  background-color: #747bff;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+}
+
+.example2 {
+  background-color: #ff6f61;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+}
+
+.little-bird {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+}
+
+.inb {
+  display: inline-block;
+}
+
+.some-data {
+  background-color: #61dafb;
+  margin: 20px;
+  padding: 50px;
+  border: 1px solid black;
+  width: min(100% - 40px);
+  height: 400px;
+  box-sizing: border-box;
+}
+
+.special {
+  background-color: lightcoral;
+  /*visibility: hidden;*/
+  display: none;
+}
