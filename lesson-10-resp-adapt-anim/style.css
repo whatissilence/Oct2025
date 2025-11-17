@@ -1,0 +1,112 @@
+.container {
+  background-color: lightpink;
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+
+  width: 100px;
+  background-color: red;
+  color: black;
+  font-size: 22px;
+
+  transition:
+    width 1.5s,
+    background-color 7s,
+    font-size 1.5s,
+    color 7s;
+}
+
+.container:hover .square {
+  width: 300px;
+  background-color: blue;
+  font-size: 32px;
+  color: white;
+}
+
+.black {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
+  background-color: black;
+  color: white;
+  font-size: 22px;
+  position: relative;
+  left: 0;
+  transition:
+    left 3s cubic-bezier(0.74,-0.61, 0.69, 1.02) 1.5s,
+    transform 5s;
+}
+
+.container:hover .black{
+  left: 400px;
+  transform: rotate(1.5turn);
+}
+
+.black2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  background-color: black;
+  color: white;
+  font-size: 22px;
+  /*animation: tiltme 1s infinite linear;*/
+}
+
+.container:hover .black2 {
+  animation:
+    get-red 4s linear infinite,
+    turn3d 8s linear infinite;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  background-color: coral;
+}
+
+.container:hover .box {
+  animation: bounce 1.2s ease-out;
+}
+
+@keyframes get-red {
+  0% { background-color: black; }
+  25% { background-color: yellow; }
+  50% {  background-color: red;  }
+  75% { background-color: blue; }
+  100% {  background-color: black;  }
+}
+
+@keyframes tiltme {
+  0% { transform: rotate(0turn); }
+  25% { transform: rotate(-0.5turn); }
+  50% {  transform: rotate(0turn);  }
+  75% { transform: rotate(-0.5turn); }
+  100% {  transform: rotate(0turn);  }
+}
+
+@keyframes turn3d {
+  0% { transform: rotateX(0turn) rotateY(0turn); }
+  50% {  transform: rotateX(2turn) rotateY(2turn);  }
+  100% { transform: rotateX(0turn) rotateY(0turn); }
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  20%  { transform: translateY(-20px); }
+  40%  { transform: translateY(0); }
+  60%  { transform: translateY(-10px); }
+  80%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}

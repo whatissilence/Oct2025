@@ -1,0 +1,165 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+}
+
+.primary-middle {
+  background-color: #EEEFF1;
+}
+
+.dark {
+  background-color: #34547A;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.navigation {
+  padding-block: 79px;
+  letter-spacing: 3px;
+}
+
+.menu {
+  display: flex;
+  gap: 48px;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu li a {
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+.menu li a:hover {
+  color: #34547A;
+}
+
+.page-title {
+  padding-top: 83px;
+  padding-bottom: 60px;
+}
+
+.page-title h1 {
+  font-size: 45px;
+}
+
+.welcome-text {
+  font-size: 16px;
+  color: #727272;
+  width: 540px;
+  padding-bottom: 65px;
+}
+
+.write-me {
+  padding: 25px 41px 17px 41px;
+  background-color: #34547A;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 16px;
+}
+
+.header {
+  padding-bottom: 141px;
+}
+
+section.about-me {
+  background-color: #F9F9F9;
+}
+
+section.about-me .container {
+  padding-block: 112px 100px;
+  text-align: center;
+}
+
+section.about-me .container h2 {
+  font-size: 32px;
+  padding-bottom: 50px;
+}
+
+section.about-me .container .about-text {
+  max-width: 540px;
+  margin: 0 auto;
+  color: #727272;
+  line-height: 164%;
+}
+
+section.projects {
+  padding-block: 100px;
+}
+
+section.projects .my-projects {
+  display: flex;
+  gap: 49px;
+  color: white;
+  padding-bottom: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section.projects .my-projects li {
+  list-style: none;
+  width: 141px;
+  height: 50px;
+  background-image: url('./images/projects-icon.svg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 70px;
+}
+
+section.projects .my-projects li span {
+  font-size: 21px;
+}
+
+section.how-i-work .container {
+  padding-block: 100px;
+  text-align: center;
+}
+
+section.how-i-work .container h2 {
+  font-size: 32px;
+  padding-bottom: 50px;
+}
+
+section.how-i-work .container .work-text {
+  max-width: 540px;
+  margin: 0 auto;
+  color: #727272;
+  line-height: 164%;
+  padding-bottom: 57px;
+}
+
+.working-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.footer {
+  padding-block: 50px;
+  color: white;
+}
+
+.footer .author {
+  font-size: 21px;
+  padding-bottom: 20px;
+}
+
+.footer .copyright {
+  font-size: 13px;
+}

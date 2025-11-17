@@ -1,0 +1,38 @@
+:root {
+  --primary-bg: lightgreen;
+  --special-bg-color: lightcoral;
+  --base-padding: 15px;
+  --base-text-size: 16px;
+}
+
+.green {
+  background-color: var(--primary-bg);
+  padding: var(--base-padding);
+  font-size: var(--base-text-size);
+}
+
+.blue {
+  background-color: lightblue;
+  padding: var(--base-padding);
+  font-size: var(--base-text-size);
+}
+
+.adv {
+  background-color: var(--primary-bg);
+  padding: calc(var(--base-padding) * 2);
+  font-size: var(--base-text-size);
+
+  &:hover {
+    background-color: lightcoral;
+  }
+
+  span {
+    font-weight: bold;
+    background-color: var(--special-bg-color);
+    padding: calc(var(--base-padding) * 2);
+
+    &:hover {
+      background-color: yellow;
+    }
+  }
+}
