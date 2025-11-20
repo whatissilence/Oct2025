@@ -1,0 +1,84 @@
+h1{
+  color:#db331d;
+}
+
+body{
+  background-color:lightblue;
+}
+
+p{
+  color:rgb(5, 87, 5);
+  font-size:16px;
+}
+
+button.special{
+  border-color:rgb(5, 87, 5);
+  width:160px;
+  height:80px;
+}
+
+.footer{
+  background-color:#db331d;
+}
+.footer:hover{
+  background-color:orange;
+}
+.footer .copyright{
+  font-size:16px;
+}
+.footer .copyright span{
+  color:black;
+}
+.footer .copyright span:hover{
+  color:red;
+}
+
+.first{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  border:2px solid black;
+  width:30px;
+  height:30px;
+}
+
+.second{
+  margin-block:20px;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  border:10px solid orange;
+  width:200px;
+  height:100px;
+}
+
+.third, .fourth{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  border:2px solid green;
+  width:100px;
+  height:100px;
+}
+
+.fourth{
+  background-color:white;
+}

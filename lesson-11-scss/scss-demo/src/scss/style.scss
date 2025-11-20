@@ -1,0 +1,60 @@
+@use "variables" as *;
+@use "header";
+@use "mixins" as *;
+
+body {
+  background-color: lightblue;
+}
+
+p {
+  color: $primary-color;
+  font-size: $base-size;
+}
+
+button.special {
+  border-color: $primary-color;
+  width: $base-size * 10;
+  height: $base-size * 5;
+}
+
+.footer {
+  background-color: $secondary-color;
+
+  &:hover {
+    background-color: orange;
+  }
+
+  .copyright {
+    font-size: $base-size;
+
+    span {
+      color: black;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+.first {
+  @include centered-block(black);
+  @include square(30px);
+}
+
+.second {
+  margin-block: 20px;
+
+  @include centered-block(orange, 10px);
+  @include rectangle(200px, 100px);
+}
+
+.third {
+  @include centered-block(green);
+  @include square(100px);
+}
+
+.fourth {
+  @extend .third;
+  background-color: white;
+}

@@ -1,0 +1,16 @@
+@mixin centered-block($border-color, $border-width: 2px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: $border-width solid $border-color;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin rectangle($width, $height) {
+  width: $width;
+  height: $height;
+}
