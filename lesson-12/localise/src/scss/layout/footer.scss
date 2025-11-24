@@ -1,0 +1,21 @@
+
+.footer {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 48px 10px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #000;
+  box-sizing: border-box;
+}
+
+.footer-left {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+}

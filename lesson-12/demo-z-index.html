@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .container {
+      position: relative;
+    }
+
+    .block {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      margin-bottom: 10px;
+      border: 1px solid black;
+    }
+
+    .blue-block {
+      background-color: blue;
+      top: 10px;
+      left: 10px;
+      opacity: 0.7;
+      z-index: 1;
+    }
+
+    .green-block {
+      background-color: green;
+      top: 80px;
+      left: 50px;
+      opacity: 0.7;
+    }
+
+    .red-block {
+      background-color: red;
+      top: 20px;
+      left: 90px;
+      opacity: 0.7;
+      z-index: 2;
+
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="block blue-block">
+    blue-block blue-block blue-block blue-block blue-block
+  </div>
+  <div class="block green-block">
+    green-block green-block green-block green-block green-block green-block
+  </div>
+  <div class="block red-block">
+    red-block red-block red-block red-block
+  </div>
+</div>
+
+
+
+</body>
+</html>
