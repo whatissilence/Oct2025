@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <style>
+
+  </style>
+
+</head>
+<body>
+
+<!--<button type="button" class="btn btn-primary">Primary</button>-->
+<!--<button type="button" class="btn btn-secondary">Secondary</button>-->
+
+<!--<div class="text-warning bg-primary bg-gradient">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dignissimos eligendi harum ipsum iste maxime necessitatibus porro, quas, quibusdam repellat, repellendus ut voluptates. Aspernatur aut laudantium quis rem veritatis.</div>-->
+<!--<div class="text-warning border  border-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis dignissimos eligendi harum ipsum iste maxime necessitatibus porro, quas, quibusdam repellat, repellendus ut voluptates. Aspernatur aut laudantium quis rem veritatis.</div>-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 bg-info border border-black">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis commodi consectetur dolore dolores fuga inventore, laborum magnam nihil nostrum obcaecati pariatur quae, quasi quidem ratione repellat velit vero voluptatem?</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 bg-info border border-black">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis commodi consectetur dolore dolores fuga inventore, laborum magnam nihil nostrum obcaecati pariatur quae, quasi quidem ratione repellat velit vero voluptatem?</p>
+    </div>
+    <div class="col-6 bg-info border border-black">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis commodi consectetur dolore dolores fuga inventore, laborum magnam nihil nostrum obcaecati pariatur quae, quasi quidem ratione repellat velit vero voluptatem?</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="container-fluid p-0">
+  <div class="row g-0">
+    <div class="col-4">
+      <div class="bg-info border border-black">NARROW CONTENT</div>
+    </div>
+    <div class="col-8">
+      <div class="bg-info border border-black">WIDE CONTENT</div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-primary pt-3 pb-5 px-4 d-none d-lg-block">
+  Text TextText TextText TextTextText TextTextText
+</div>
+
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 bg-info border border-black">
+      <p>WIDE ALWAYS</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 col-lg-6  bg-info border border-black">
+      <p>Wide on small screen and 1:2 on wide -</p>
+    </div>
+    <div class="col-12 col-md-8 col-lg-6  bg-info border border-black">
+      <p>Wide on small screen and 1:2 on wide --</p>
+    </div>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First</th>
+    <th scope="col">Last</th>
+    <th scope="col">Handle</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Mark</td>
+    <td>Otto</td>
+    <td>@mdo</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Mark2</td>
+    <td>Otto2</td>
+    <td>@mdo2</td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>Mark3</td>
+    <td>Otto3</td>
+    <td>@mdo3</td>
+  </tr>
+  <tr>
+    <th scope="row">4</th>
+    <td>Mark4</td>
+    <td>Otto4</td>
+    <td>@mdo4</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="container p-3">
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<hr>
+<div class="container p-3">
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Риби
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Вони плавають у воді. Не можуть жити на суші.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Звіри
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Вони живуть на суші. Не можуть жити у воді.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Птахи
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Вони літають у повітрі. Не можуть жити у воді.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
