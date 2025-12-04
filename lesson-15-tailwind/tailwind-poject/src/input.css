@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #0C69CC;
+  --color-brand-light: #65aaef;
+
+  --background-image-reader-in-train: url('../images/reader-in-train.jpg');
+}
+
+.paging {
+  @apply p-2 border border-gray-300 hover:border-black text-gray-300 hover:text-black;
+}
