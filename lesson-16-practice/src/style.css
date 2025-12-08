@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'Caveat Brush';
+  src: url('./fonts/CaveatBrush-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-cave: "Caveat Brush", Verdana, sans-serif;
+  --background-image-squares: url('./images/squares-pattern.png');
+}
+
+.color-button {
+  @apply w-9 h-9 rounded-full cursor-pointer
+    border border-white hover:border-gray-500;
+}
+
+.color-radio {
+  @apply block w-9 h-9 rounded-full
+    peer-checked:ring-2
+  peer-checked:ring-black
+    peer-checked:ring-offset-4
+  peer-checked:ring-offset-white;
+}

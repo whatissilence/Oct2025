@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link rel="stylesheet" href="dist/output.css">
+</head>
+<body>
+<h2>Colors:</h2>
+<div class="border grid gap-2 grid-cols-[repeat(auto-fit,minmax(32px,1fr))] justify-items-center w-1/2 max-w-[300px] p-2">
+  <button class="color-button bg-red-400"></button>
+  <button class="color-button bg-orange-400"></button>
+  <button class="color-button bg-yellow-300"></button>
+  <button class="color-button bg-lime-300"></button>
+  <button class="color-button bg-green-300"></button>
+  <button class="color-button bg-teal-300"></button>
+  <button class="color-button bg-sky-400"></button>
+  <button class="color-button bg-cyan-200"></button>
+  <button class="color-button bg-blue-400"></button>
+  <button class="color-button bg-indigo-400"></button>
+  <button class="color-button bg-violet-400"></button>
+  <button class="color-button bg-purple-400"></button>
+  <button class="color-button bg-fuchsia-400"></button>
+  <button class="color-button bg-red-400"></button>
+</div>
+
+<div class="flex gap-6 p-3">
+  <label class="relative cursor-pointer">
+    <input type="radio" name="color" class="peer sr-only" checked >
+    <span class="color-radio bg-blue-300"></span>
+  </label>
+
+  <label class="relative cursor-pointer">
+    <input type="radio" name="color" class="peer sr-only" >
+    <span class="color-radio bg-pink-200 "></span>
+  </label>
+</div>
+
+</body>
+</html>
