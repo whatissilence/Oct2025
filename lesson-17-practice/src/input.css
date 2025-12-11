@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: semi-bold;
+  font-display: swap;
+  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+}
+
+@theme {
+  --color-primary: #F0145A;
+  --color-head: #B3B3BA;
+  --color-back-secondary: #F5F5FA;
+  --color-page-name: #323264;
+  --color-nav-link: #24A3FF;
+  --color-header-circle: #E6E6F0;
+
+  --font-primary: Montserrat, sans-serif;
+
+  --breakpoint-3xl: 120rem;
+}
+
+.lang {
+  @apply p-1 px-2 font-bold text-sm uppercase text-head;
+}
+
+.lang-active {
+  @apply bg-primary text-white rounded-lg;
+}
+
+.menu-item {
+  @apply text-nav-link font-bold text-base;
+}
+
+.menu-item-active {
+  @apply text-primary border-primary border-b-2;
+}
+
+.header-separator {
+  @apply hidden md:block;
+}
