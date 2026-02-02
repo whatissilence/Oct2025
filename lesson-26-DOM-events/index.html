@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="exampleBlock"></div>
+
+<div id="coloredDiv"></div>
+
+<div id="grandfather" class="family">
+  grandfather
+  <div id="father" class="family">
+    father
+    <div id="son" class="family">
+      son
+    </div>
+  </div>
+</div>
+
+<br>
+<form action="http://google.com" method="get">
+  <label for="email">Email: </label>
+  <input id="email" type="text" name="q" value="">
+  <button id="validateButton">Validate email</button>
+  <button>Submit</button>
+</form>
+
+<div id="checkboxContainer">
+  <label>
+    <input type="checkbox" class="pretty-check" name="chrome" value="chrome">
+    Google Chrome
+  </label>
+  <label>
+    <input type="checkbox" class="pretty-check" name="firefox" value="firefox">
+    Firefox
+  </label>
+  <label>
+    <input type="checkbox" class="pretty-check" name="ie" value="ie">
+    Internet Explorer
+  </label>
+  <label>
+    <input type="checkbox" class="pretty-check" name="opera" value="opera">
+    Opera
+  </label>
+  <label>
+    <input type="checkbox" class="pretty-check" name="safari" value="safari">
+    Safari
+  </label>
+</div>
+
+<div id="redOne">
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
