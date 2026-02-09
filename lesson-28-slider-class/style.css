@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.slider {
+  width: 900px;
+  position: relative;
+}
+
+.slider-viewport {
+  width: 100%;
+  overflow-x: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.slider-line {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+
+.slow-switch {
+  transition: transform 0.5s;
+}
+
+.slider-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  opacity: 0.5;
+  font-size: 80px;
+  width: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.slider-nav:hover {
+  opacity: 0.7;
+}
+
+.slider-nav.slider-left {
+  left: 0;
+}
+
+.slider-nav.slider-right {
+  right: 0;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  opacity: 1;
+}
+
+.play-container {
+  position: absolute;
+  bottom: 10px;
+  left: 83px;
+  z-index: 10;
+}
+
+.play-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.play-btn .icon {
+  width: 0;
+  height: 0;
+}
+
+.play-btn.play .icon {
+  border-left: 12px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-left: 3px;
+}
+
+.play-btn.pause .icon {
+  width: 12px;
+  height: 14px;
+  position: relative;
+}
+
+.play-btn.pause .icon::before,
+.play-btn.pause .icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 13px;
+  height: 100%;
+  background: black;
+}
+
+.play-btn.pause .icon::after {
+  right: 0;
+}

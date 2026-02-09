@@ -1,5 +1,5 @@
 const SLIDER_WIDTH = 900;
-const PLAY_TIMOUT_SEC = 3;
+const PLAY_TIMEOUT_SEC = 3;
 const SWIPE_THRESHOLD = 80;
 
 const imageList = [
@@ -49,7 +49,7 @@ function initEvents() {
     }
   })
 
-  // intervalTimer = setInterval(rightClickHandler, PLAY_TIMOUT_SEC * 1000); // я виключив миготиння со старту
+  intervalTimer = setInterval(rightClickHandler, PLAY_TIMEOUT_SEC * 1000);
   document.getElementById('playButton').addEventListener('click', playHandler)
   document.getElementById('pauseButton').addEventListener('click', pauseHandler)
 
@@ -108,9 +108,10 @@ function rightClickHandler() {
       currentSlide = 0;
       silentlyMoveToSlide(currentSlide)
     }, 500); // тишком переходимо після анімації, вона у нас в css 0.5 sec
+  } else {
+    moveToSlide(currentSlide);
   }
 
-  moveToSlide(currentSlide);
 }
 
 function pauseHandler() {
@@ -122,12 +123,12 @@ function pauseHandler() {
 
 function playHandler() {
   if (!intervalTimer) {
-    intervalTimer = setInterval(rightClickHandler, PLAY_TIMOUT_SEC * 1000);
+    intervalTimer = setInterval(rightClickHandler, PLAY_TIMEOUT_SEC * 1000);
   }
 }
 
-function touchStartHandler(e) {
-  startX = e.touches[0].clientX;
+function touchStartHandler(event) {
+  startX = event.touches[0].clientX;
   isSwiping = true;
   pauseHandler(); // стопаємо аутоплей
 
