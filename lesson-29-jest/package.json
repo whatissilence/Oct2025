@@ -7,8 +7,10 @@
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
-    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll",
+    "test:unix": "node --experimental-vm-modules ./node_modules/.bin/jest",
+    "test:unix:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll"
   },
   "devDependencies": {
     "jest": "^30.2.0"
