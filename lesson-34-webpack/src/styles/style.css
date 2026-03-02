@@ -1,0 +1,25 @@
+@import "fonts.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightblue;
+}
+
+.logo {
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  background-image: url("../assets/icon-square-big.png");
+}
+
+.duck-img {
+  height: 300px;
+}
+
+.container h1 {
+  font-family: 'Pacifico';
+  color: darkblue;
+}
