@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  font-family: system-ui;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: yellow;
+}

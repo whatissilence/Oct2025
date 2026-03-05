@@ -1,0 +1,17 @@
+$background: lightblue;
+$duck-border: darkblue;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background;
+}
+
+.duck-img {
+  height: 400px;
+  border: 3px dotted $duck-border;
+}
