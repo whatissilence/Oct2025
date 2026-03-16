@@ -119,3 +119,8 @@ const exmpl: Example<number> = {
 
 console.log(exm);
 console.log(exmpl);
+
+async function example(): Promise<number> {
+  const a: number = 3;
+  return a;
+}
