@@ -1,0 +1,11 @@
+button {
+  border-radius: 5px;
+}
+
+.success {
+  border: 1px solid darkgreen;
+}
+
+.error {
+  border: 1px solid red;
+}

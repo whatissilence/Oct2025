@@ -1,0 +1,29 @@
+.user-label {
+  border: 1px solid darkcyan;
+  border-radius: 5px;
+  max-width: 200px;
+}
+
+.user-label-main {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 5px;
+}
+
+.user-label img {
+  width: 20px;
+  height: 20px;
+  margin: 15px;
+}
+
+.user-label:hover .user-label-text {
+  font-weight: bold;
+}
+
+.user-label-desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6em;
+}
