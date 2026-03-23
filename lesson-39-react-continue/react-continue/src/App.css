@@ -1,0 +1,11 @@
+.parent-container {
+  background-color: lightblue;
+
+  div {
+    padding: 10px;
+  }
+}
+
+.test {
+  background-color: lightyellow;
+}
