@@ -1,0 +1,10 @@
+button[type="submit"] {
+  background-color: lightgreen;
+  padding: 5px;
+  border: 1px solid green;
+  border-radius: 5px;
+}
+
+button[type="submit"]:disabled {
+  background-color: lightcoral;
+}

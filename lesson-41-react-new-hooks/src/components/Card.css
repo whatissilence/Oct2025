@@ -1,0 +1,16 @@
+.card {
+  border: 1px solid black;
+  background-color: lightblue;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 200px;
+  min-height: 50px;
+  margin: 10px;
+}
+
+.card-control {
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #248FB1;
+  margin-bottom: 10px;
+}

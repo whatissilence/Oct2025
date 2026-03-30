@@ -1,0 +1,9 @@
+.loading {
+  font-weight: bold;
+  color: darkblue;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
