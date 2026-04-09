@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.application {
+  min-height: 100vh;
+}
+
+.light {
+  background-color: lightblue;
+  color: black;
+}
+
+.dark {
+  background-color: darkblue;
+  color: lightgrey;
+}
+
+.remove-item {
+  margin-inline: 20px;
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.remove-item.light {
+  background-color: #08325f;
+  color: white;
+}
+
+.remove-item.dark {
+  background-color: #90baef;
+  color: black;
+}
