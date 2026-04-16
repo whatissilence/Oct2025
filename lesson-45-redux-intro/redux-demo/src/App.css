@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.app.light {
+  background-color: #eee;
+  color: black;
+}
+
+.app.dark {
+  background-color: #333;
+  color: white;
+}
+
+.counter button {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-inline: 10px;
+  padding: 10px;
+}
+
+.counter.light button {
+  background-color: lightskyblue;
+}
+
+.counter.dark button {
+  background-color: yellow;
+}
+

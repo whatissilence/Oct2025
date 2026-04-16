@@ -1,0 +1,6 @@
+export const ActionType = {
+  INCREMENT: 'INCREMENT',
+  DECREMENT: 'DECREMENT',
+  SET_COUNT: 'SET_COUNT',
+  TOGGLE_THEME: 'TOGGLE_THEME',
+}
