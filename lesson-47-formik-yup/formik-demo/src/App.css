@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.field-container {
+  border: 1px solid darkgreen;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 5px;
+}
+
+.field-container input {
+  border: 1px solid darkgray;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.field-container label {
+  margin-inline: 10px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  border: 1px solid darkgreen;
+  border-radius: 5px;
+  background-color: lightgreen;
+  margin: 5px;
+}
+
+.error {
+  color: red;
+  margin-inline: 10px;
+}
+
+.field-container .field-error {
+  border: 1px solid red;
+}
