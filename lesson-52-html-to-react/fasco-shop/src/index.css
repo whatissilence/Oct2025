@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Poppins-Font";
+  src: url('./assets/fonts/Poppins-Regular.ttf') format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Volkhov-Font";
+  src: url("./assets/fonts/Volkhov-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jost-Font";
+  src: url("./assets/fonts/Jost-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Digital-Font";
+  src: url("./assets/fonts/DigitalNumbers-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme {
+  --font-poppins: "Poppins-Font", sans-serif;
+  --font-volkhov: "Volkhov-Font", serif;
+  --font-jost: "Jost-Font", sans-serif;
+  --font-digital: "Digital-Font", serif;
+}
+
+@theme {
+  --background-image-style: url("./assets/images/bg-style.svg");
+}
+
+@theme {
+  --color-dark: #484848;
+  --color-light: #8a8a88;
+}
+
+.size-btn {
+  @apply flex items-center justify-center w-[42px] h-[42px] border rounded-md text-light border-light cursor-pointer hover:cursor-pointer hover:bg-gray-200;
+}
+.size-btn-active {
+  @apply focus:bg-gray-900 focus:text-white;
+}
+
+.product-size-btn {
+  @apply flex items-center justify-center w-[45px] h-[45px] border rounded-md text-black border-gray-200 cursor-pointer hover:cursor-pointer hover:bg-gray-200;
+}
+.product-size-btn-active {
+  @apply focus:bg-gray-900 focus:text-white;
+}
+
+.colors-btn {
+  @apply cursor-pointer hover:cursor-pointer w-[30px] h-[30px] rounded-full hover:border-2 hover:border-gray-300;
+}
+.colors-btn-active {
+  @apply focus:border-gray-300 focus:border-5;
+}
+.filter-btn {
+  @apply cursor-pointer hover:cursor-pointer hover:text-black;
+}
+.btn-active {
+  @apply focus:bg-gray-900 focus:text-white focus:shadow-2xl;
+}
+.item-color-filter {
+  @apply block w-7 h-7 rounded-full cursor-pointer hover:border-2 hover:border-gray-300 peer-checked:hover:border-0 peer-checked:outline peer-checked:outline-1 peer-checked:outline-black peer-checked:outline-offset-4;
+}
+
+.product-item-color-filter {
+  @apply block w-10 h-10 rounded-full cursor-pointer hover:border-2 hover:border-gray-300 peer-checked:hover:border-0 peer-checked:outline peer-checked:outline-1 peer-checked:outline-black peer-checked:outline-offset-4;
+}
+
+.filters-open {
+  @apply absolute top-0 left-0 right-0 bottom-0 bg-white w-full max-w-none;
+}
+.sold-out {
+  @apply bg-gray-400 text-white font-bold font-black w-20 h-20 rounded-full flex items-center justify-center text-center;
+}
