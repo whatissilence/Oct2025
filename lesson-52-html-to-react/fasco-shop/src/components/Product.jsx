@@ -13,7 +13,7 @@ export default function Product({ product }) {
       <p className="mb-5 font-jost">${Number(product.price).toFixed(2)}</p>
       <form className="flex gap-3">
         {product.colors.map((color, index) => (
-          <label>
+          <label key={color}>
             <input
               type="radio"
               name="color"

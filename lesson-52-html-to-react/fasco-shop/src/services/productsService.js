@@ -5,6 +5,7 @@ const products = [
     price: 8,
     image: '/productsImages/rounded-hat.png',
     colors: ['bg-red-600', 'bg-black'],
+    sizes: ['S','L', 'XL'],
     isSoldOut: false,
   },
   {
@@ -13,6 +14,7 @@ const products = [
     price: 17,
     image: '/productsImages/linen-blend-shirt.png',
     colors: ['bg-black', 'bg-orange-400', 'bg-sky-400'],
+    sizes: ['S','M','L'],
     isSoldOut: true,
   },
   {
@@ -21,6 +23,7 @@ const products = [
     price: 106,
     image: '/productsImages/long-sleeve-coat.png',
     colors: ['bg-black', 'bg-amber-50'],
+    sizes: ['S','M','L', 'XL'],
     isSoldOut: false,
   },
   {
@@ -29,6 +32,7 @@ const products = [
     price: 25,
     image: '/productsImages/boxy-denim-hat.png',
     colors: ['bg-blue-800', 'bg-red-500'],
+    sizes: ['S','L', 'XL'],
     isSoldOut: false,
   },
   {
@@ -37,6 +41,7 @@ const products = [
     price: 25,
     image: '/productsImages/linen-plain-top.png',
     colors: ['bg-black', 'bg-emerald-800'],
+    sizes: ['S','L', 'XL'],
     isSoldOut: false,
   },
   {
@@ -45,6 +50,7 @@ const products = [
     price: 8,
     image: '/productsImages/oversized-t-shirt.png',
     colors: ['bg-red-600', 'bg-black', 'bg-lime-500'],
+    sizes: ['S','L', 'XL'],
     isSoldOut: false,
   },
   {
@@ -54,6 +60,7 @@ const products = [
     oldPrice: 21,
     image: '/productsImages/polarised-sunglasses.png',
     colors: ['bg-[url(/colorTextures/squares-texture.svg)]', 'bg-black'],
+    sizes: ['S','L', 'XL'],
     isSoldOut: false,
   },
   {
@@ -62,14 +69,16 @@ const products = [
     price: 22,
     image: '/productsImages/rockstar-jacket.png',
     colors: ['bg-black'],
+    sizes: ['S'],
     isSoldOut: false,
   },
   {
     id: 9,
     name: 'Dotted Black Dress',
-    price: 20,
+    price: 220,
     image: '/productsImages/dotted-black-dress.png',
     colors: ['bg-black', 'bg-amber-50'],
+    sizes: ['S','M','L', 'XL'],
     isSoldOut: false,
   },
 ];

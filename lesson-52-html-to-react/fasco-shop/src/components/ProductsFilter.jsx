@@ -1,6 +1,53 @@
 
 
-export default function ProductsFilter() {
+export default function ProductsFilter({ filter, updateFilter }) {
+  const handleSizeChange = (clickedSize) => {
+    let sizes = [...filter.sizes];
+
+    if (sizes.includes(clickedSize)) {
+      sizes = sizes.filter((existingSize) => existingSize !== clickedSize);
+    } else {
+      sizes.push(clickedSize); // add M
+    }
+
+    console.log('clicked size', clickedSize);
+    updateFilter({
+      ...filter,
+      sizes
+    })
+  }
+
+  const handlePriceChange = (min, max) => {
+    let prices = [...filter.prices];
+
+    if (prices.includes(`${min}-${max}`)) {
+      prices = prices.filter((price) => price !== `${min}-${max}`);
+    } else {
+      prices.push(`${min}-${max}`);
+    }
+
+    updateFilter({
+      ...filter,
+      prices,
+    })
+  }
+
+  const getPriceClassName = (min, max) => {
+    if (filter.prices.includes(`${min}-${max}`)) {
+      return 'filter-btn text-black';
+    }
+
+    return 'filter-btn';
+  }
+
+  const getSizeClassName = (size) => {
+    if (filter.sizes.includes(size)) {
+      return 'size-btn size-btn-active';
+    }
+
+    return 'size-btn';
+  }
+
   return (
     <aside className="max-w-[320px] hidden lg:block">
       <h2 className="text-3xl font-volkhov pb-8">Filters</h2>
@@ -8,10 +55,10 @@ export default function ProductsFilter() {
       <section className="mb-[28px]">
         <h3 className="font-volkhov text-lg pb-6">Size</h3>
         <div className="font-jost flex flex-wrap gap-3 max-w-[160px]">
-          <button className="size-btn size-btn-active">S</button>
-          <button className="size-btn">M</button>
-          <button className="size-btn">L</button>
-          <button className="size-btn">XL</button>
+          <button className={getSizeClassName('S')} onClick={() => handleSizeChange('S')}>S</button>
+          <button className={getSizeClassName('M')} onClick={() => handleSizeChange('M')}>M</button>
+          <button className={getSizeClassName('L')} onClick={() => handleSizeChange('L')}>L</button>
+          <button className={getSizeClassName('XL')} onClick={() => handleSizeChange('XL')}>XL</button>
         </div>
       </section>
 
@@ -39,11 +86,11 @@ export default function ProductsFilter() {
         <h3 className="font-[Volkhov-Font] text-lg pb-6">Prices</h3>
         <div
           className="flex items-start flex-col gap-[10px] font-poppins text-light">
-          <button className="filter-btn focus:text-black">$0-$50</button>
-          <button className="filter-btn">$50-$100</button>
-          <button className="filter-btn">$100-$150</button>
-          <button className="filter-btn">$150-$200</button>
-          <button className="filter-btn">$300-$400</button>
+          <button className={getPriceClassName(0, 50)} onClick={() => handlePriceChange(0, 50)}>$0-$50</button>
+          <button className={getPriceClassName(50, 100)} onClick={() => handlePriceChange(50, 100)}>$50-$100</button>
+          <button className={getPriceClassName(100, 150)} onClick={() => handlePriceChange(100, 150)}>$100-$150</button>
+          <button className={getPriceClassName(150, 200)} onClick={() => handlePriceChange(150, 200)}>$150-$200</button>
+          <button className={getPriceClassName(200, 400)} onClick={() => handlePriceChange(200, 400)}>$200-$400</button>
         </div>
       </section>
 

@@ -12,11 +12,32 @@ export default function Products() {
   const [originalProducts, setOriginalProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [filter, setFilter] = useState({
+    sizes: [],
+    prices: []
+  });
 
-  let filteredProducts = originalProducts;
+  let displayedProducts = [...originalProducts];
 
-  const handleFilterChange = () => {
-    filteredProducts = originalProducts.filter((product) => product.size === 'SMALL')
+  if(filter.sizes.length > 0){
+    displayedProducts = displayedProducts.filter(
+      product => product.sizes.some(size => filter.sizes.includes(size))
+    )
+  }
+
+  if(filter.prices.length > 0){
+    displayedProducts = displayedProducts.filter(
+      product => filter.prices.some(priceStr => {
+        const [min, max] = priceStr.split('-').map(Number);
+        return product.price >= min && product.price <= max;
+      })
+    )
+  }
+
+  const handleFilterChange = (filterNew) => {
+    console.log('filter old', filter);
+    console.log('filter new', filterNew);
+    setFilter(filterNew);
   }
 
   const fetchProducts = async () => {
@@ -51,7 +72,7 @@ export default function Products() {
 
       <section className="container mx-auto max-w-7xl flex">
 
-        <ProductsFilter />
+        <ProductsFilter filter={filter} updateFilter={handleFilterChange} />
 
 
         <main className="w-full">
@@ -103,7 +124,7 @@ export default function Products() {
 
           <section className="grid grid-cols-3 gap-7 mb-20">
             {
-              filteredProducts.map((product) => (
+              displayedProducts.map((product) => (
                 <Product key={product.id} product={product} />
               ))
             }

@@ -48,7 +48,7 @@
   @apply flex items-center justify-center w-[42px] h-[42px] border rounded-md text-light border-light cursor-pointer hover:cursor-pointer hover:bg-gray-200;
 }
 .size-btn-active {
-  @apply focus:bg-gray-900 focus:text-white;
+  @apply bg-gray-900 text-white;
 }
 
 .product-size-btn {
