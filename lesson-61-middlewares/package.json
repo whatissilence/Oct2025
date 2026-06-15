@@ -1,0 +1,22 @@
+{
+  "name": "lesson-61-middlewares",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "joi": "^17.13.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
