@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload with Fetch</title>
+</head>
+<body>
+<h1>Отправка через fetch</h1>
+
+<form id="uploadForm">
+  <div>
+    <label>
+      Имя:
+      <input type="text" name="name">
+    </label>
+  </div>
+
+  <br>
+
+  <div>
+    <label>
+      Email:
+      <input type="email" name="email">
+    </label>
+  </div>
+
+  <br>
+
+  <div>
+    <label>
+      Аватар:
+      <input type="file" name="avatar">
+    </label>
+  </div>
+
+  <br>
+
+  <button type="submit">
+    Отправить
+  </button>
+</form>
+
+<pre id="result"></pre>
+
+<script>
+  const form = document.querySelector('#uploadForm');
+  const result = document.querySelector('#result');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('http://localhost:3000/upload', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      result.textContent =
+        JSON.stringify(data, null, 2);
+
+    } catch (error) {
+      console.error(error);
+      result.textContent = error.message;
+    }
+  });
+</script>
+</body>
+</html>
