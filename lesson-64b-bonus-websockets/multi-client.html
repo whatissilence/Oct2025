@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket.io Private Chat</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; }
+    #auth-container, #chat-container { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    #chat-container { display: none; }
+    #messages { height: 300px; border: 1px solid #ccc; border-radius: 4px; padding: 10px; overflow-y: auto; margin-bottom: 15px; background: #fff; }
+    .message { margin-bottom: 8px; padding: 6px 10px; border-radius: 4px; background: #e1f5fe; width: fit-content; max-width: 80%; }
+    .message.private { background: #ffe0b2; border: 1px dashed #f57c00; }
+    .message .sender { font-weight: bold; font-size: 12px; display: block; color: #555; }
+    .input-group { display: flex; gap: 10px; margin-bottom: 10px; }
+    #message-input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+    select, input[type="text"] { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+    button { padding: 10px 20px; background-color: #0288d1; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+    button:hover { background-color: #01579b; }
+    #error-msg { color: red; margin-top: 10px; font-size: 14px; }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.min.js"></script>
+</head>
+<body>
+
+<div id="auth-container">
+  <h2>Enter your nickname</h2>
+  <div class="input-group">
+    <input type="text" id="nickname-input" placeholder="Nickname..." autocomplete="off">
+    <button id="connect-btn">Connect</button>
+  </div>
+  <div id="error-msg"></div>
+</div>
+
+<div id="chat-container">
+  <h3 id="chat-title">Chat</h3>
+  <div id="messages"></div>
+
+  <div class="input-group">
+    <select id="user-select">
+      <option value="all">Everyone (Global Chat)</option>
+    </select>
+    <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+    <button id="send-btn">Send</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const socket = io('http://localhost:3000');
+
+    const authContainer = document.getElementById('auth-container');
+    const nicknameInput = document.getElementById('nickname-input');
+    const connectBtn = document.getElementById('connect-btn');
+    const errorMsg = document.getElementById('error-msg');
+
+    const chatContainer = document.getElementById('chat-container');
+    const chatTitle = document.getElementById('chat-title');
+    const messagesContainer = document.getElementById('messages');
+    const messageInput = document.getElementById('message-input');
+    const sendBtn = document.getElementById('send-btn');
+    const userSelect = document.getElementById('user-select');
+
+    let myNickname = '';
+
+    connectBtn.addEventListener('click', () => {
+      const nickname = nicknameInput.value.trim();
+      if (nickname) {
+        socket.emit('register user', nickname);
+      }
+    });
+
+    socket.on('registration success', (nickname) => {
+      myNickname = nickname;
+      authContainer.style.display = 'none';
+      chatContainer.style.display = 'block';
+      chatTitle.textContent = `Logged in as: ${nickname}`;
+    });
+
+    socket.on('registration error', (error) => {
+      errorMsg.textContent = error;
+    });
+
+    socket.on('update users list', (usersList) => {
+      userSelect.innerHTML = '<option value="all">Everyone (Global Chat)</option>';
+      usersList.forEach(user => {
+        if (user !== myNickname) {
+          const option = document.createElement('option');
+          option.value = user;
+          option.textContent = user;
+          userSelect.appendChild(option);
+        }
+      });
+    });
+
+    function displayMessage(data) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message');
+
+      if (data.isPrivate) {
+        messageElement.classList.add('private');
+      }
+
+      const senderSpan = document.createElement('span');
+      senderSpan.classList.add('sender');
+      senderSpan.textContent = data.isPrivate ? `[Private from ${data.sender}]:` : `${data.sender}:`;
+
+      messageElement.appendChild(senderSpan);
+      messageElement.append(data.text);
+
+      messagesContainer.appendChild(messageElement);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function sendMessage() {
+      const text = messageInput.value.trim();
+      const to = userSelect.value;
+
+      if (text) {
+        socket.emit('message', { text, to });
+        messageInput.value = '';
+      }
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    messageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+
+    socket.on('message', (data) => {
+      displayMessage(data);
+    });
+
+    socket.on('system message', (text) => {
+      const msg = document.createElement('div');
+      msg.style.color = 'gray';
+      msg.style.fontStyle = 'italic';
+      msg.textContent = text;
+      messagesContainer.appendChild(msg);
+    });
+  });
+</script>
+</body>
+</html>

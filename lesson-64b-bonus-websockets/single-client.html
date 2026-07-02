@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket.io Чат</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f9;
+    }
+    #chat-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    #messages {
+      height: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+      background: #fff;
+    }
+    .message {
+      margin-bottom: 8px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      background: #e1f5fe;
+      width: fit-content;
+      max-width: 80%;
+    }
+    .input-group {
+      display: flex;
+      gap: 10px;
+    }
+    #message-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    #send-btn {
+      padding: 10px 20px;
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    #send-btn:hover {
+      background-color: #01579b;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.min.js"></script>
+</head>
+<body>
+  <div id="chat-container">
+    <div id="messages">
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="message-input" placeholder="Type a message" autocomplete="off">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const socket = io('http://localhost:3000');
+
+    const messagesContainer = document.getElementById('messages');
+    const messageInput = document.getElementById('message-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    function displayMessage(text) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message');
+      messageElement.textContent = text;
+      messagesContainer.appendChild(messageElement);
+
+      // Autoscroll
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function sendMessage() {
+      const text = messageInput.value.trim();
+      if (text) {
+        socket.emit('message', text);
+        messageInput.value = '';
+      }
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    messageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+    socket.on('message', (message) => {
+      displayMessage(message);
+    });
+
+    socket.on('connect', () => {
+      console.log('Connected');
+    })
+
+    socket.on('disconnect', () => {
+      console.log('Disconnected');
+    })
+  })
+
+</script>
+</body>
+</html>
