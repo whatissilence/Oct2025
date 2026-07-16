@@ -1,0 +1,33 @@
+
+docker pull mongo - стягнути імедж але не запускати
+
+docker run mongo - стагнути і запустити
+docker ps - лист запущених контейнерів
+
+docker start CONT_ID - запустити існуючий
+docker stop CONT_ID - зупинити запущений
+
+docker run -d mongo - ключ -d - запустити без логів в консолі detached
+
+docker logs CONT_ID - останні логі с запущенного контейнеру
+
+docker container prune - видалити усі незапущені контейнери
+
+docker image ls - список images
+docker image rm 4bc6bc963e6d - видалити один по айді
+
+docker run -p 6000:27017 -d --name new-mongo mongo - запуск нової версії монго з іменем на порті 6000
+docker run -p 7000:27017 -d --name old-mongo mongo:8.0.11 - запуск старої версії монго з іменем на порті 7000
+
+docker exec -it new-mongo sh - зайти в контейнер і там виконувати команди
+exit - вийти
+
+
+docker build --no-cache -t backend-demo .   - зібрати проект
+
+--------------------------------------------------------------------------------
+docker compose up    - команда оркестратору запустити систему зі звʼязаними контейнерами
+docker compose down  - команда оркестратору зупинити систему і видалити непотрібні контейнери
+
+docker compose up --build --force-recreate - команда оркестратору перезібрати все заново і запустити систему
+

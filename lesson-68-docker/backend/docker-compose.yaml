@@ -1,0 +1,46 @@
+services:
+  backend-demo:
+    image: backend-demo:latest
+    restart: always
+    build: .
+    ports:
+      - 4444:4000
+    environment:
+      - PORT=4000
+      - MONGO_CONNECTION_STRING=mongodb://admin:changeme@mongo:27017/
+      - SECRET_KEY=12345678qwertyuio
+    networks:
+      - backend-network
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: changeme
+    networks:
+      - backend-network
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://admin:changeme@mongo:27017/
+      ME_CONFIG_BASICAUTH_ENABLED: true
+      ME_CONFIG_BASICAUTH_USERNAME: mongoexpressuser
+      ME_CONFIG_BASICAUTH_PASSWORD: mongoexpresspass
+    networks:
+      - backend-network
+    depends_on:
+      - mongo
+
+networks:
+  backend-network:
