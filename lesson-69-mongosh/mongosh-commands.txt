@@ -1,0 +1,53 @@
+
+// показати бази даних на сервері (або кластері
+show dbs
+
+// переключитися на базу
+use sample_mflix
+
+
+// обрати 10 фільмів з 2014 року
+db.getCollection('movies').find({year: 2014}).limit(10)
+db.movies.find({year: Number(2014)}).limit(10)
+
+
+ db.createCollection("reviews")
+// видалити коллекцію reviews
+ db.reviews.drop()
+
+
+db.movies.find({year: Number(2014)}).toArray().length
+
+db.movies.find({year: {$gte: 2015}})
+
+// Шукаємо Романтичні драми про війну
+db.movies.find({genres: { $all: ["Drama", "Romance", "War"] }}).count()
+74
+
+// Шукаємо драми, або романтика, або про війну, або щось з цього
+db.movies.find({genres: { $in: ["Drama", "Romance", "War"] }}).count()
+13548
+
+// Шукаємо персон з відсутнім емейлом
+db.persons.find({email: { $exists: false }})
+
+// Взяти тільки назви фільмів, приховати айді
+db.movies.find({genres: { $all: ["Drama", "Romance", "War"] }}, {title: 1, _id: 0})
+
+db.persons.aggregate(
+  [
+    {
+      $group: {
+        _id: "$age",
+        count: { $sum: 1 },
+        people: { $push: {name: "$name"} }
+      }
+    }
+  ]
+).sort({_id: 1})
+
+// взяти усі поля найстаршої людини
+db.persons.findOne({}, {}, {sort: {age: -1}})
+
+// видалити найстаршу людину
+db.persons.findOneAndDelete({}, {sort: {age: -1}})
